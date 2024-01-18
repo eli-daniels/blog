@@ -1,0 +1,32 @@
+---
+title: "Posts"
+listing:
+  contents: posts/**/*.qmd
+  #sort: "date desc"
+  #type: default
+  #categories: true
+  #sort-ui: true
+  #filter-ui: true
+  fields: [date, title, reading-time, description, categories]
+  feed: true
+page-layout: full
+title-block-banner: false
+---
+
+
+## Series
+:::: {.columns}
+::: {.column width="50%"}
+
+#### [Tidy Tuesday](tidy-tuesday.html)
+This series contains my submissions to Posit's tidy tuesday weekly dataset. 
+:::
+
+::: {.column width="50%"}
+#### [Blog](blog.html)
+This is where I blog about data science, economics and public policy.
+:::
+
+:::: 
+
+## All posts

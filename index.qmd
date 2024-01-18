@@ -1,0 +1,7 @@
+---
+title: "Home"
+---
+
+Welcome to my website! My name is Eli Daniels, I'm a data analyst and public policy consultant current working in Canberra, Australia.
+
+This website serves as a place for me to learn Quarto and also show off some cool things I do in R sometimes. Check out the navigation bar above to see [my blog](blog.qmd) or [my tidy tuesday](tidy-tuesday.qmd) submissions.

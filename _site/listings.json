@@ -1,0 +1,23 @@
+[
+  {
+    "listing": "/tidy-tuesday.html",
+    "items": [
+      "/posts/tt/my-first-tt-post.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/blog/how-to-r-package-for-newbies.html",
+      "/posts/blog/my-first-blog.html"
+    ]
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/tt/my-first-tt-post.html",
+      "/posts/blog/my-first-blog.html",
+      "/posts/blog/how-to-r-package-for-newbies.html"
+    ]
+  }
+]

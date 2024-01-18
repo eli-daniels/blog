@@ -1,0 +1,15 @@
+---
+title: "Blog"
+listing:
+  contents: posts/blog/**.qmd
+  sort: "date desc"
+  type: default
+  #categories: false
+  #sort-ui: false
+  #filter-ui: false
+  fields: [date, title, reading-time, description]
+page-layout: full
+title-block-banner: false
+---
+
+This is where I blog about things like data science, economics and public policy.

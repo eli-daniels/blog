@@ -1,0 +1,106 @@
+---
+title: 'My first blog post'
+date: '2022-06-01'
+categories: ['My first blog', 'geo-spatial']
+description: 'Where are the ACT speed camera hotspots?'
+execute: 
+  message: false
+  warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+# Heading 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui
+
+## Merriweather
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui
+
+### Loading in libraries and data
+
+Data from this website: Mobile Speed Camera Visits and Stays \| Open Data Portal (act.gov.au)
+
+```{r}
+library(tidyverse)
+library(leaflet)
+library(tidygeocoder)
+library(glue)
+library(httr)
+library(jsonlite)
+```
+
+```{r}
+
+base_url <-  "https://www.data.act.gov.au/resource/d56a-2nhi.json?"
+full_url <-  glue(base_url, '$limit=100000' )
+response <-  GET(full_url)
+
+data_raw <-  fromJSON(rawToChar(response$content)) %>% 
+  as_tibble() %>% type_convert()
+  
+glimpse(data_raw)
+```
+
+```{r}
+
+# https://jenslaufer.com/data/analysis/visualize_missing_values_with_ggplot.html
+missing_values <- data_raw %>%
+  gather(key = "key", value = "val") %>%
+  mutate(isna = is.na(val)) %>%
+  group_by(key) %>%
+  mutate(total = n()) %>%
+  group_by(key, total, isna) %>%
+  summarise(num.isna = n()) %>%
+  mutate(pct = round(num.isna / total * 100, 2))
+
+levels <- (missing_values  %>% filter(isna == T) %>% arrange(desc(pct)))$key
+
+percentage_plot <- missing_values %>%
+  ggplot() +
+  
+    geom_bar(aes(x = reorder(key, desc(pct)), y = pct, fill=isna), 
+             stat = 'identity', 
+             alpha=0.8) +
+  
+    geom_text(aes(x = reorder(key, desc(pct)) , 
+                  y = 50, 
+                  label = ifelse(isna == TRUE, glue("{pct}% are missing\nThat's {num.isna} out of {total}"), ""))) + 
+  
+      scale_x_discrete(limits = levels) +
+      scale_fill_manual(name = "", 
+                        values = c('steelblue', 'tomato3'), 
+                        labels = c("Present", "Missing")) +
+      coord_flip() +
+      labs(title = "Percentage of missing values", 
+           x ='Variable', 
+           y = "% of missing values")
+
+percentage_plot
+```
+
+```{r}
+data <- data_raw %>% drop_na()
+print(glue("Raw data rows: {nrow(data_raw)}\nClean data rows: {nrow(data)}\nLost rows: {nrow(data_raw)-nrow(data)}"))
+```
+
+```{r}
+#https://jessecambon.github.io/tidygeocoder/
+
+glimpse(data)
+ 
+lat_longs <- data %>%
+  mutate(address = glue("{street}, Canberra")) %>% 
+  geocode(address, method = 'osm', lat = latitude , long = longitude)
+
+glimpse(lat_longs)
+```
+
+```{r}
+#build leaflet
+leaflet(data = lat_longs) %>% 
+  addTiles() %>% 
+  addMarkers(~longitude, ~latitude)
+  
+```

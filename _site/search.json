@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "tidy-tuesday.html",
+    "href": "tidy-tuesday.html",
+    "title": "Tidy Tuesday",
+    "section": "",
+    "text": "This is where I show my submissions to tidytuesday, a weekly data visualisation challenge.\n\n\n\n\n\n\n\n\n\n\nMy first TT post\n\n\n\n\n\nThis is a test post. In this post, I try out different functionalities\n\n\n\n\n\n\nJun 1, 2022\n\n\n3 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/tt/my-first-tt-post.html",
+    "href": "posts/tt/my-first-tt-post.html",
+    "title": "My first TT post",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n\nThis is inline code plus a small code chunk.\n\nlibrary(tidyverse)\n\nggplot(mpg) +\n  geom_jitter(aes(cty, hwy), size = 4, alpha = 0.5) \n\n\n\n\n\n\n\n\nTransforming OLS estimatesMaximizing likelihood\n\n\n\n\nCode\npreds_lm %&gt;% \n  ggplot(aes(body_mass_g, bill_length_mm, col = correct)) +\n  geom_jitter(size = 4, alpha = 0.6) +\n  facet_wrap(vars(species)) +\n  scale_color_manual(values = c('grey60', thematic::okabe_ito(3)[3])) +\n  scale_x_continuous(breaks = seq(3000, 6000, 1000)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    legend.position = 'top', \n    panel.background = element_rect(color = 'black'),\n    panel.grid.minor = element_blank()\n  ) +\n  labs(\n    x = 'Body mass (in g)',\n    y = 'Bill length (in mm)'\n  )\n\n\n\n\n\n\n\n\n\nCode\nglm.mod &lt;- glm(sex ~ body_mass_g + bill_length_mm + species, family = binomial, data = dat)\n\npreds &lt;- dat %&gt;% \n  mutate(\n    prob.fit = glm.mod$fitted.values,\n    prediction = if_else(prob.fit &gt; 0.5, 'male', 'female'),\n    correct = if_else(sex == prediction, 'correct', 'incorrect')\n  )\n\n\npreds %&gt;% \n  ggplot(aes(body_mass_g, bill_length_mm, col = correct)) +\n  geom_jitter(size = 4, alpha = 0.6) +\n  facet_wrap(vars(species)) +\n  scale_x_continuous(breaks = seq(3000, 6000, 1000)) +\n  scale_color_manual(values = c('grey60', thematic::okabe_ito(3)[3])) +\n  theme_minimal(base_size = 10) +\n  theme(\n    legend.position = 'top', \n    panel.background = element_rect(color = 'black'),\n    panel.grid.minor = element_blank()\n  ) +\n  labs(\n    x = 'Body mass (in g)',\n    y = 'Bill length (in mm)'\n  )\n\n\n\n\n\n\n\n\n\n\n\\[\n\\int_0^1 f(x) \\ dx\n\\]\n\n\n\n\n\n\n\n\ngeom_density(\n  mapping = NULL,\n  data = NULL,\n  stat = \"density\",\n  position = \"identity\",\n  ...,\n  na.rm = FALSE,\n  orientation = NA,\n  show.legend = NA,\n  inherit.aes = TRUE,\n  outline.type = \"upper\"\n)\n\n\nstat_density(\n  mapping = NULL,\n  data = NULL,\n  geom = \"area\",\n  position = \"stack\",\n  ...,\n  bw = \"nrd0\",\n  adjust = 1,\n  kernel = \"gaussian\",\n  n = 512,\n  trim = FALSE,\n  na.rm = FALSE,\n  orientation = NA,\n  show.legend = NA,\n  inherit.aes = TRUE\n)\n\n\n\n\n\n\n\nggplot(data = gapminder::gapminder, mapping = aes(x = lifeExp, fill = continent)) +\n  stat_density(position = \"identity\", alpha = 0.5)\n\n\n\n\nBla bla bla. This is a caption in the margin. Super cool isn’t it?"
+  },
+  {
+    "objectID": "posts/tt/my-first-tt-post.html#merriweather",
+    "href": "posts/tt/my-first-tt-post.html#merriweather",
+    "title": "My first TT post",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n\nThis is inline code plus a small code chunk.\n\nlibrary(tidyverse)\n\nggplot(mpg) +\n  geom_jitter(aes(cty, hwy), size = 4, alpha = 0.5) \n\n\n\n\n\n\n\n\nTransforming OLS estimatesMaximizing likelihood\n\n\n\n\nCode\npreds_lm %&gt;% \n  ggplot(aes(body_mass_g, bill_length_mm, col = correct)) +\n  geom_jitter(size = 4, alpha = 0.6) +\n  facet_wrap(vars(species)) +\n  scale_color_manual(values = c('grey60', thematic::okabe_ito(3)[3])) +\n  scale_x_continuous(breaks = seq(3000, 6000, 1000)) +\n  theme_minimal(base_size = 12) +\n  theme(\n    legend.position = 'top', \n    panel.background = element_rect(color = 'black'),\n    panel.grid.minor = element_blank()\n  ) +\n  labs(\n    x = 'Body mass (in g)',\n    y = 'Bill length (in mm)'\n  )\n\n\n\n\n\n\n\n\n\nCode\nglm.mod &lt;- glm(sex ~ body_mass_g + bill_length_mm + species, family = binomial, data = dat)\n\npreds &lt;- dat %&gt;% \n  mutate(\n    prob.fit = glm.mod$fitted.values,\n    prediction = if_else(prob.fit &gt; 0.5, 'male', 'female'),\n    correct = if_else(sex == prediction, 'correct', 'incorrect')\n  )\n\n\npreds %&gt;% \n  ggplot(aes(body_mass_g, bill_length_mm, col = correct)) +\n  geom_jitter(size = 4, alpha = 0.6) +\n  facet_wrap(vars(species)) +\n  scale_x_continuous(breaks = seq(3000, 6000, 1000)) +\n  scale_color_manual(values = c('grey60', thematic::okabe_ito(3)[3])) +\n  theme_minimal(base_size = 10) +\n  theme(\n    legend.position = 'top', \n    panel.background = element_rect(color = 'black'),\n    panel.grid.minor = element_blank()\n  ) +\n  labs(\n    x = 'Body mass (in g)',\n    y = 'Bill length (in mm)'\n  )\n\n\n\n\n\n\n\n\n\n\n\\[\n\\int_0^1 f(x) \\ dx\n\\]"
+  },
+  {
+    "objectID": "posts/tt/my-first-tt-post.html#columns",
+    "href": "posts/tt/my-first-tt-post.html#columns",
+    "title": "My first TT post",
+    "section": "",
+    "text": "geom_density(\n  mapping = NULL,\n  data = NULL,\n  stat = \"density\",\n  position = \"identity\",\n  ...,\n  na.rm = FALSE,\n  orientation = NA,\n  show.legend = NA,\n  inherit.aes = TRUE,\n  outline.type = \"upper\"\n)\n\n\nstat_density(\n  mapping = NULL,\n  data = NULL,\n  geom = \"area\",\n  position = \"stack\",\n  ...,\n  bw = \"nrd0\",\n  adjust = 1,\n  kernel = \"gaussian\",\n  n = 512,\n  trim = FALSE,\n  na.rm = FALSE,\n  orientation = NA,\n  show.legend = NA,\n  inherit.aes = TRUE\n)"
+  },
+  {
+    "objectID": "posts/tt/my-first-tt-post.html#margin-captions",
+    "href": "posts/tt/my-first-tt-post.html#margin-captions",
+    "title": "My first TT post",
+    "section": "",
+    "text": "ggplot(data = gapminder::gapminder, mapping = aes(x = lifeExp, fill = continent)) +\n  stat_density(position = \"identity\", alpha = 0.5)\n\n\n\n\nBla bla bla. This is a caption in the margin. Super cool isn’t it?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to my website! My name is Eli Daniels, I’m a data analyst and public policy consultant current working in Canberra, Australia.\nThis website serves as a place for me to learn Quarto and also show off some cool things I do in R sometimes. Check out the navigation bar above to see my blog or my tidy tuesday submissions."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "This is where I blog about things like data science, economics and public policy.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nMy first blog post\n\n\n\n\n\nWhere are the ACT speed camera hotspots?\n\n\n\n\n\n\nJun 1, 2022\n\n\n2 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/blog/my-first-blog.html",
+    "href": "posts/blog/my-first-blog.html",
+    "title": "My first blog post",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui\n\n\nData from this website: Mobile Speed Camera Visits and Stays | Open Data Portal (act.gov.au)\n\nlibrary(tidyverse)\nlibrary(leaflet)\nlibrary(tidygeocoder)\nlibrary(glue)\nlibrary(httr)\nlibrary(jsonlite)\n\n\nbase_url &lt;-  \"https://www.data.act.gov.au/resource/d56a-2nhi.json?\"\nfull_url &lt;-  glue(base_url, '$limit=100000' )\nresponse &lt;-  GET(full_url)\n\ndata_raw &lt;-  fromJSON(rawToChar(response$content)) %&gt;% \n  as_tibble() %&gt;% type_convert()\n  \nglimpse(data_raw)\n\nRows: 67,030\nColumns: 9\n$ date                &lt;dttm&gt; 2023-04-12, 2023-04-18, 2023-04-20, 2023-04-12, 2…\n$ timeatsiteinhours   &lt;dbl&gt; 1.57, 1.42, 1.58, 1.52, 1.58, 1.83, 1.13, 1.33, 0.…\n$ description_of_site &lt;chr&gt; \"Barron Street/Stonehaven Crescent\", \"Belconnen Wa…\n$ camera_location     &lt;chr&gt; \"0288A\", \"0098E\", \"0052B\", \"0052C\", \"0105A\", \"0105…\n$ street              &lt;chr&gt; \"Strickland Crescent\", \"Haydon Drive\", \"Novar Stre…\n$ number_checked      &lt;dbl&gt; 438, 412, 214, 176, 380, 359, 776, 656, 55, 309, 1…\n$ highest_speed       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ average_speed       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ posted_speed        &lt;dbl&gt; 50, 80, 60, 60, 50, 50, 60, 50, 60, 60, 50, 50, 50…\n\n\n\n# https://jenslaufer.com/data/analysis/visualize_missing_values_with_ggplot.html\nmissing_values &lt;- data_raw %&gt;%\n  gather(key = \"key\", value = \"val\") %&gt;%\n  mutate(isna = is.na(val)) %&gt;%\n  group_by(key) %&gt;%\n  mutate(total = n()) %&gt;%\n  group_by(key, total, isna) %&gt;%\n  summarise(num.isna = n()) %&gt;%\n  mutate(pct = round(num.isna / total * 100, 2))\n\nlevels &lt;- (missing_values  %&gt;% filter(isna == T) %&gt;% arrange(desc(pct)))$key\n\npercentage_plot &lt;- missing_values %&gt;%\n  ggplot() +\n  \n    geom_bar(aes(x = reorder(key, desc(pct)), y = pct, fill=isna), \n             stat = 'identity', \n             alpha=0.8) +\n  \n    geom_text(aes(x = reorder(key, desc(pct)) , \n                  y = 50, \n                  label = ifelse(isna == TRUE, glue(\"{pct}% are missing\\nThat's {num.isna} out of {total}\"), \"\"))) + \n  \n      scale_x_discrete(limits = levels) +\n      scale_fill_manual(name = \"\", \n                        values = c('steelblue', 'tomato3'), \n                        labels = c(\"Present\", \"Missing\")) +\n      coord_flip() +\n      labs(title = \"Percentage of missing values\", \n           x ='Variable', \n           y = \"% of missing values\")\n\npercentage_plot\n\n\n\n\n\ndata &lt;- data_raw %&gt;% drop_na()\nprint(glue(\"Raw data rows: {nrow(data_raw)}\\nClean data rows: {nrow(data)}\\n Lost rows: {nrow(data_raw)-nrow(data)}\"))\n\nRaw data rows: 67030\nClean data rows: 66969\n Lost rows: 61\n\n\n\n#https://jessecambon.github.io/tidygeocoder/\n\nglimpse(data)\n\nRows: 66,969\nColumns: 9\n$ date                &lt;dttm&gt; 2023-04-12, 2023-04-18, 2023-04-20, 2023-04-12, 2…\n$ timeatsiteinhours   &lt;dbl&gt; 1.57, 1.42, 1.58, 1.52, 1.58, 1.83, 1.13, 1.33, 0.…\n$ description_of_site &lt;chr&gt; \"Barron Street/Stonehaven Crescent\", \"Belconnen Wa…\n$ camera_location     &lt;chr&gt; \"0288A\", \"0098E\", \"0052B\", \"0052C\", \"0105A\", \"0105…\n$ street              &lt;chr&gt; \"Strickland Crescent\", \"Haydon Drive\", \"Novar Stre…\n$ number_checked      &lt;dbl&gt; 438, 412, 214, 176, 380, 359, 776, 656, 55, 309, 1…\n$ highest_speed       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ average_speed       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ posted_speed        &lt;dbl&gt; 50, 80, 60, 60, 50, 50, 60, 50, 60, 60, 50, 50, 50…\n\n# \n# lat_longs &lt;- data %&gt;%\n#   geocode(addr, method = 'osm', lat = latitude , long = longitude)"
+  },
+  {
+    "objectID": "posts/blog/my-first-blog.html#merriweather",
+    "href": "posts/blog/my-first-blog.html#merriweather",
+    "title": "My first blog post",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui\n\n\nData from this website: Mobile Speed Camera Visits and Stays | Open Data Portal (act.gov.au)\n\nlibrary(tidyverse)\nlibrary(leaflet)\nlibrary(tidygeocoder)\nlibrary(glue)\nlibrary(httr)\nlibrary(jsonlite)\n\n\nbase_url &lt;-  \"https://www.data.act.gov.au/resource/d56a-2nhi.json?\"\nfull_url &lt;-  glue(base_url, '$limit=100000' )\nresponse &lt;-  GET(full_url)\n\ndata_raw &lt;-  fromJSON(rawToChar(response$content)) %&gt;% \n  as_tibble() %&gt;% type_convert()\n  \nglimpse(data_raw)\n\nRows: 67,030\nColumns: 9\n$ date                &lt;dttm&gt; 2023-04-12, 2023-04-18, 2023-04-20, 2023-04-12, 2…\n$ timeatsiteinhours   &lt;dbl&gt; 1.57, 1.42, 1.58, 1.52, 1.58, 1.83, 1.13, 1.33, 0.…\n$ description_of_site &lt;chr&gt; \"Barron Street/Stonehaven Crescent\", \"Belconnen Wa…\n$ camera_location     &lt;chr&gt; \"0288A\", \"0098E\", \"0052B\", \"0052C\", \"0105A\", \"0105…\n$ street              &lt;chr&gt; \"Strickland Crescent\", \"Haydon Drive\", \"Novar Stre…\n$ number_checked      &lt;dbl&gt; 438, 412, 214, 176, 380, 359, 776, 656, 55, 309, 1…\n$ highest_speed       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ average_speed       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ posted_speed        &lt;dbl&gt; 50, 80, 60, 60, 50, 50, 60, 50, 60, 60, 50, 50, 50…\n\n\n\n# https://jenslaufer.com/data/analysis/visualize_missing_values_with_ggplot.html\nmissing_values &lt;- data_raw %&gt;%\n  gather(key = \"key\", value = \"val\") %&gt;%\n  mutate(isna = is.na(val)) %&gt;%\n  group_by(key) %&gt;%\n  mutate(total = n()) %&gt;%\n  group_by(key, total, isna) %&gt;%\n  summarise(num.isna = n()) %&gt;%\n  mutate(pct = round(num.isna / total * 100, 2))\n\nlevels &lt;- (missing_values  %&gt;% filter(isna == T) %&gt;% arrange(desc(pct)))$key\n\npercentage_plot &lt;- missing_values %&gt;%\n  ggplot() +\n  \n    geom_bar(aes(x = reorder(key, desc(pct)), y = pct, fill=isna), \n             stat = 'identity', \n             alpha=0.8) +\n  \n    geom_text(aes(x = reorder(key, desc(pct)) , \n                  y = 50, \n                  label = ifelse(isna == TRUE, glue(\"{pct}% are missing\\nThat's {num.isna} out of {total}\"), \"\"))) + \n  \n      scale_x_discrete(limits = levels) +\n      scale_fill_manual(name = \"\", \n                        values = c('steelblue', 'tomato3'), \n                        labels = c(\"Present\", \"Missing\")) +\n      coord_flip() +\n      labs(title = \"Percentage of missing values\", \n           x ='Variable', \n           y = \"% of missing values\")\n\npercentage_plot\n\n\n\n\n\ndata &lt;- data_raw %&gt;% drop_na()\nprint(glue(\"Raw data rows: {nrow(data_raw)}\\nClean data rows: {nrow(data)}\\n Lost rows: {nrow(data_raw)-nrow(data)}\"))\n\nRaw data rows: 67030\nClean data rows: 66969\n Lost rows: 61\n\n\n\n#https://jessecambon.github.io/tidygeocoder/\n\nglimpse(data)\n\nRows: 66,969\nColumns: 9\n$ date                &lt;dttm&gt; 2023-04-12, 2023-04-18, 2023-04-20, 2023-04-12, 2…\n$ timeatsiteinhours   &lt;dbl&gt; 1.57, 1.42, 1.58, 1.52, 1.58, 1.83, 1.13, 1.33, 0.…\n$ description_of_site &lt;chr&gt; \"Barron Street/Stonehaven Crescent\", \"Belconnen Wa…\n$ camera_location     &lt;chr&gt; \"0288A\", \"0098E\", \"0052B\", \"0052C\", \"0105A\", \"0105…\n$ street              &lt;chr&gt; \"Strickland Crescent\", \"Haydon Drive\", \"Novar Stre…\n$ number_checked      &lt;dbl&gt; 438, 412, 214, 176, 380, 359, 776, 656, 55, 309, 1…\n$ highest_speed       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ average_speed       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…\n$ posted_speed        &lt;dbl&gt; 50, 80, 60, 60, 50, 50, 60, 50, 60, 60, 50, 50, 50…\n\n# \n# lat_longs &lt;- data %&gt;%\n#   geocode(addr, method = 'osm', lat = latitude , long = longitude)"
+  },
+  {
+    "objectID": "posts/blog/my-first-blog.html#columns",
+    "href": "posts/blog/my-first-blog.html#columns",
+    "title": "My first blog post",
+    "section": "",
+    "text": "geom_density(\n  mapping = NULL,\n  data = NULL,\n  stat = \"density\",\n  position = \"identity\",\n  ...,\n  na.rm = FALSE,\n  orientation = NA,\n  show.legend = NA,\n  inherit.aes = TRUE,\n  outline.type = \"upper\"\n)\n\n\nstat_density(\n  mapping = NULL,\n  data = NULL,\n  geom = \"area\",\n  position = \"stack\",\n  ...,\n  bw = \"nrd0\",\n  adjust = 1,\n  kernel = \"gaussian\",\n  n = 512,\n  trim = FALSE,\n  na.rm = FALSE,\n  orientation = NA,\n  show.legend = NA,\n  inherit.aes = TRUE\n)"
+  },
+  {
+    "objectID": "posts/blog/my-first-blog.html#margin-captions",
+    "href": "posts/blog/my-first-blog.html#margin-captions",
+    "title": "My first blog post",
+    "section": "",
+    "text": "ggplot(data = gapminder::gapminder, mapping = aes(x = lifeExp, fill = continent)) +\n  stat_density(position = \"identity\", alpha = 0.5)\n\n\n\n\nBla bla bla. This is a caption in the margin. Super cool isn’t it?"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Posts",
+    "section": "",
+    "text": "This series contains my submissions to Posit’s tidy tuesday weekly dataset.\n\n\n\n\nThis is where I blog about data science, economics and public policy."
+  },
+  {
+    "objectID": "posts.html#post-series",
+    "href": "posts.html#post-series",
+    "title": "Eli Daniels",
+    "section": "",
+    "text": "This series contains my submissions to Posit’s tidy tuesday weekly dataset.\n\n\n\n\nThis is where I blog about data science, economics and public policy."
+  },
+  {
+    "objectID": "posts.html#all-posts",
+    "href": "posts.html#all-posts",
+    "title": "Posts",
+    "section": "All posts",
+    "text": "All posts"
+  },
+  {
+    "objectID": "posts.html#series",
+    "href": "posts.html#series",
+    "title": "Posts",
+    "section": "",
+    "text": "This series contains my submissions to Posit’s tidy tuesday weekly dataset.\n\n\n\n\nThis is where I blog about data science, economics and public policy."
+  }
+]

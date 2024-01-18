@@ -1,0 +1,15 @@
+---
+title: "Tidy Tuesday"
+listing:
+  contents: posts/tt/**.qmd
+  sort: "date desc"
+  type: default
+  #categories: false
+  #sort-ui: false
+  #filter-ui: false
+  fields: [date, title, reading-time, description]
+page-layout: full
+title-block-banner: false
+---
+
+This is where I show my submissions to tidytuesday, a weekly data visualisation challenge.

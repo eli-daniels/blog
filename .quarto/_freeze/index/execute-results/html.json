@@ -1,0 +1,14 @@
+{
+  "hash": "ebb946b3c08bcba03a99c8dcbb5f3782",
+  "result": {
+    "markdown": "---\ntitle: \"Home\"\n---\n\n\nWelcome to my website! My name is Eli Daniels, I'm a data analyst and public policy consultant current working in Canberra, Australia.\n\nThis website serves as a place for me to learn Quarto and also show off some cool things I do in R sometimes.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

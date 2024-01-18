@@ -1,0 +1,13 @@
+{
+  "listingMap": {
+    "blog.qmd": [
+      "posts/blog/**.qmd"
+    ],
+    "posts.qmd": [
+      "posts/**/*.qmd"
+    ],
+    "tidy-tuesday.qmd": [
+      "posts/tt/**.qmd"
+    ]
+  }
+}
